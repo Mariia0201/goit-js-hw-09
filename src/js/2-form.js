@@ -1,18 +1,3 @@
-function createFormMarkup() {
-  return `
-    <form class="feedback-form" autocomplete="off">
-      <label>
-        Email
-        <input type="email" name="email" autofocus />
-      </label>
-      <label>
-        Message
-        <textarea name="message" rows="8"></textarea>
-      </label>
-      <button type="submit">Submit</button>
-    </form>
-  `;
-}
 
 const formContainer = document.getElementById('form-container');
 formContainer.innerHTML = createFormMarkup();
@@ -37,7 +22,7 @@ function loadFormData() {
   return JSON.parse(localStorage.getItem(LOCAL_KEY)) || {};
 }
 
-function reloadPage() {
+function populateFormData() {
   const { email, message } = form.elements;
   if (dataForm) {
     email.value = dataForm.email || '';
@@ -61,4 +46,4 @@ function onFormSubmit(e) {
   dataForm = {};
 }
 
-  reloadPage();
+  populateFormData();
