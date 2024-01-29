@@ -1,3 +1,18 @@
+function createFormMarkup() {
+  return `
+    <form class="feedback-form" autocomplete="off">
+      <label>
+        Email
+        <input type="email" name="email" autofocus />
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="8"></textarea>
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+  `;
+}
 
 const formContainer = document.getElementById('form-container');
 formContainer.innerHTML = createFormMarkup();
